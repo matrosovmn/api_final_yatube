@@ -1,16 +1,21 @@
 ## Описание
-Проект представляет собой API для проекта yatube.
+Проект представляет собой API для проекта Yatube.
 
 Функционал:
 
-* Авторизация по JWT токену
+* Авторизация по JWT токену;
 
-* Сериализация данных для всех моделей проекта (Post, Comment, Group, Follow)
+* Возможность создавать посты и комментарии к ним;
 
-* Обработка GET, POST, PATCH, PUT и DELETE запросов к базе данных проекта Yatube
+* Подписываться на авторов;
+
+* Создавать группы;
+
+* Обработка GET, POST, PATCH, PUT и DELETE запросов к базе данных проекта Yatube.
+
 
 ## Как запустить проект:
-1. Клонировать репозиторий и перейти в него в командной строке:
+1. Клонировать репозиторий и перейти в папку (каталог) в командной строке:
 ```
 git clone git@github.com:matrosovmn/api_final_yatube.git
 ```
@@ -19,10 +24,10 @@ cd yatube_api/
 ```
 2. Cоздать и активировать виртуальное окружение:
 ```
-py -m venv env
+python -m venv venv
 ```
 ```
-source env/scripts/activate
+source venv/Scripts/activate
 ```
 3. Установить зависимости из файла requirements.txt:
 ```
@@ -33,25 +38,32 @@ pip install -r requirements.txt
 ```
 4. Выполнить миграции:
 ```
-py manage.py migrate
+python manage.py migrate
 ```
 5. Запустить проект:
 ```
-py manage.py runserver
+python manage.py runserver
 ```
 
+
 ## Примеры
-Для доступа к API необходимо получить токен: Нужно выполнить POST-запрос localhost:8000/api/v1/token/ передав поля username и password. API вернет JWT-токен.
+Для доступа к API необходимо получить токен: 
+
+Нужно выполнить POST-запрос (localhost:8000/api/v1/token/) передав поля username и password. API вернет JWT-токен.
 
 Дальше, передав токен можно будет обращаться к методам, например:
 
-/api/v1/posts/ (GET, POST, PUT, PATCH, DELETE)
+[/api/v1/posts/] (http://127.0.0.1:8000/api/v1/posts/) (GET, POST, PUT, PATCH, DELETE)
 
 При отправке запроса передавайте токен в заголовке Authorization: Bearer <токен>
 
 Слово Bearer здесь заменяет слово Token и означает, что за ним следует сам токен.
 
+Подробные примеры запросов можно посмотреть по [ссылке] (http://127.0.0.1:8000/redoc/) после запуска сервера с проектом.
+
+
 ## Об авторе
 Начинающий разработчик Михаил Матросов. С моими другими работами вы можете ознакомится по ссылке: https://github.com/matrosovmn
+
 
 ![Jokes Card](https://readme-jokes.vercel.app/api)
