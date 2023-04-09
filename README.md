@@ -14,17 +14,31 @@
 ```
 git clone git@github.com:matrosovmn/api_final_yatube.git
 ```
+```
 cd yatube_api/
+```
 2. Cоздать и активировать виртуальное окружение:
+```
 py -m venv env
+```
+```
 source env/scripts/activate
+```
 3. Установить зависимости из файла requirements.txt:
+```
 python -m pip install --upgrade pip
+```
+```
 pip install -r requirements.txt
+```
 4. Выполнить миграции:
+```
 py manage.py migrate
+```
 5. Запустить проект:
+```
 py manage.py runserver
+```
 
 ## Примеры
 Для доступа к API необходимо получить токен: Нужно выполнить POST-запрос localhost:8000/api/v1/token/ передав поля username и password. API вернет JWT-токеню
