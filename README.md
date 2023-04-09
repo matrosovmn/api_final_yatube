@@ -11,8 +11,10 @@
 
 ## Как запустить проект:
 1. Клонировать репозиторий и перейти в него в командной строке:
-```git clone git@github.com:matrosovmn/api_final_yatube.git```
->cd yatube_api/
+```
+git clone git@github.com:matrosovmn/api_final_yatube.git
+```
+cd yatube_api/
 2. Cоздать и активировать виртуальное окружение:
 py -m venv env
 source env/scripts/activate
