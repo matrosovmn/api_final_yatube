@@ -3,25 +3,25 @@
 
 Функционал:
 
-Авторизация по JWT токену
+* Авторизация по JWT токену
 
-Сериализация данных для всех моделей проекта (Post, Comment, Group, Follow)
+* Сериализация данных для всех моделей проекта (Post, Comment, Group, Follow)
 
-Обработка GET, POST, PATCH, PUT и DELETE запросов к базе данных проекта Yatube
+* Обработка GET, POST, PATCH, PUT и DELETE запросов к базе данных проекта Yatube
 
 ## Как запустить проект:
-Клонировать репозиторий и перейти в него в командной строке:
+1. Клонировать репозиторий и перейти в него в командной строке:
 git clone git@github.com:matrosovmn/api_final_yatube.git
 cd yatube_api/
-Cоздать и активировать виртуальное окружение:
+2. Cоздать и активировать виртуальное окружение:
 py -m venv env
 source env/scripts/activate
-Установить зависимости из файла requirements.txt:
+3. Установить зависимости из файла requirements.txt:
 python -m pip install --upgrade pip
 pip install -r requirements.txt
-Выполнить миграции:
+4. Выполнить миграции:
 py manage.py migrate
-Запустить проект:
+5. Запустить проект:
 py manage.py runserver
 
 ## Примеры
