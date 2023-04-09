@@ -37,3 +37,5 @@ py manage.py runserver
 
 ## Об авторе
 Начинающий разработчик Михаил Матросов. С моими другими работами вы можете ознакомится по ссылке: https://github.com/matrosovmn
+
+![Jokes Card](https://readme-jokes.vercel.app/api)
