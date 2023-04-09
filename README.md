@@ -20,7 +20,7 @@
 git clone git@github.com:matrosovmn/api_final_yatube.git
 ```
 ```
-cd yatube_api/
+cd api_final_yatube/
 ```
 2. Cоздать и активировать виртуальное окружение:
 ```
