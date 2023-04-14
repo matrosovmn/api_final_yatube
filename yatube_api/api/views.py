@@ -1,12 +1,11 @@
 from rest_framework import filters, viewsets
 from django.shortcuts import get_object_or_404
-from rest_framework.exceptions import ValidationError
 from rest_framework.permissions import (IsAuthenticated,
                                         IsAuthenticatedOrReadOnly)
 from rest_framework.pagination import LimitOffsetPagination
 from rest_framework.mixins import (CreateModelMixin, ListModelMixin,
                                    RetrieveModelMixin)
-from posts.models import Follow, Group, Post, User
+from posts.models import Group, Post
 from api.serializers import (CommentSerializer, FollowSerializer,
                              GroupSerializer, PostSerializer)
 from api.permissions import IsAuthorOrReadOnly
@@ -53,10 +52,4 @@ class FollowViewSet(CreateModelMixin, ListModelMixin,
         return user.follower.all()
 
     def perform_create(self, serializer):
-        following = User.objects.get(username=self.request.data.get(
-                                     'following'))
-        user = self.request.user
-        follower = Follow.objects.filter(user=user, following=following)
-        if follower.exists():
-            raise ValidationError()
-        serializer.save(user=user, following=following)
+        serializer.save(user=self.request.user)
